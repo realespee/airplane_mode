@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{tenant}-{shop}",
+ "creation": "2024-06-14 17:35:21.651071",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "amount",
+  "monthly_remittance",
+  "contract_start_date",
+  "contract_date_of_expiry",
+  "column_break_slvd",
+  "shop",
+  "payment_frequency",
+  "payment_due_date",
+  "other_terms",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Annual Rent Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tenant Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "contract_start_date",
+   "fieldtype": "Date",
+   "label": "Contract Start Date"
+  },
+  {
+   "fieldname": "column_break_slvd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_due_date",
+   "fieldtype": "Date",
+   "label": "Next Payment Due Date"
+  },
+  {
+   "fieldname": "monthly_remittance",
+   "fieldtype": "Currency",
+   "label": "Monthly Remittance ",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_date_of_expiry",
+   "fieldtype": "Date",
+   "label": "Contract Date of Expiry"
+  },
+  {
+   "default": "Monthly",
+   "fieldname": "payment_frequency",
+   "fieldtype": "Select",
+   "label": "Payment Frequency",
+   "options": "\nMonthly\nAnnually"
+  },
+  {
+   "fieldname": "other_terms",
+   "fieldtype": "Small Text",
+   "label": "Other Terms"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Rent Payment",
+   "link_fieldname": "tenant"
+  }
+ ],
+ "modified": "2024-07-19 02:15:47.916919",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Tracking",
+ "name": "Tenant Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "shop"
+}

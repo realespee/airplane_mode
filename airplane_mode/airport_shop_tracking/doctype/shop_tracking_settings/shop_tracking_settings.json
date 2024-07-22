@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-17 02:27:05.388715",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rent_settings_section",
+  "default_rent_amount",
+  "initial_payable_months",
+  "column_break_vbdh",
+  "enable_rent_reminders"
+ ],
+ "fields": [
+  {
+   "fieldname": "rent_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Rent Settings"
+  },
+  {
+   "fieldname": "default_rent_amount",
+   "fieldtype": "Currency",
+   "label": "Default Rent Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_rent_reminders",
+   "fieldtype": "Check",
+   "label": "Enable Rent Reminders"
+  },
+  {
+   "fieldname": "column_break_vbdh",
+   "fieldtype": "Column Break",
+   "label": "Enable/Disable Reminders"
+  },
+  {
+   "default": "3",
+   "description": "First Timers Pay How Many Months Ahead",
+   "fieldname": "initial_payable_months",
+   "fieldtype": "Data",
+   "label": "Initial Payable Months"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-07-18 02:13:36.306060",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Tracking",
+ "name": "Shop Tracking Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

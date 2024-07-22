@@ -1,0 +1,9 @@
+<div class="card mb-2 p-3">
+	{% set airplane = doc.airplane %}
+    {% set airline = frappe.db.get_value('Airplane', airplane, 'airline') %}
+	<h6>{{ airline }}</h6>
+	<small>{{ doc.source_airport_code }} -> {{ doc.destination_airport_code }}</small>
+	<small>{{ doc.date_of_departure }} | {{ doc.time_of_departure }} | {{ frappe.utils.format_duration(doc.duration) }}</small>
+	<a href="/{{ doc.route |e}}"><small style="color: rgb(90, 76, 251);">View Flight</small></a>
+</div>
+

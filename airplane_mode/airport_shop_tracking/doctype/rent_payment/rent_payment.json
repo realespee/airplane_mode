@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{tenant}-{payment_date}-{####}",
+ "creation": "2024-06-14 17:40:32.071565",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant_contract",
+  "shop",
+  "tenant",
+  "amount",
+  "amended_from",
+  "total_payment",
+  "column_break_nqwx",
+  "payment_date",
+  "payment_due_date",
+  "receipt_number"
+ ],
+ "fields": [
+  {
+   "fetch_from": "tenant_contract.shop",
+   "fieldname": "shop",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "tenant_contract.tenant",
+   "fieldname": "tenant",
+   "fieldtype": "Data",
+   "label": "Tenant"
+  },
+  {
+   "fetch_from": "tenant_contract.monthly_remittance",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Monthly Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receipt_number",
+   "fieldtype": "Data",
+   "label": "Receipt Number"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "tenant.payment_due_date",
+   "fieldname": "payment_due_date",
+   "fieldtype": "Date",
+   "label": "Next Payment Due Date"
+  },
+  {
+   "fieldname": "column_break_nqwx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_payment",
+   "fieldtype": "Currency",
+   "label": "Total Payment"
+  },
+  {
+   "fieldname": "tenant_contract",
+   "fieldtype": "Link",
+   "label": "Tenant Contract",
+   "link_filters": "[[\"Tenant Contract\",\"docstatus\",\"!=\",\"1\"]]",
+   "options": "Tenant Contract"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-19 02:23:18.403095",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Tracking",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tenant_contract"
+}

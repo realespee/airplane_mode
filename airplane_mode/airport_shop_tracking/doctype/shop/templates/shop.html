@@ -1,0 +1,26 @@
+{% extends "templates/web.html" %} 
+
+
+{% block page_content %}
+    <a href="/shops" style="color: blue;">Go Back</a>
+
+    <h4>{{ doc.name }}</h4>
+    <br>
+     <!-- Flight Details  -->
+    <div style="display: flex;">
+        <img src="{{ doc.shop_image }}" style="width: 300px; height: 300px;" alt="No Image">
+        <div style="display: flex; flex-direction: column;">
+            <ul style="margin: auto;">
+                <li>Shop: {{doc.shop_number}}</li>
+                <li>Shop Name: {{ doc.shop_name }}</li>
+                <li>{{ doc.airport }}</li>
+                <li><strong>Price: {{doc.get_formatted("price")}}</strong></li>
+            </ul>
+            <a  style="margin: auto;"
+                href="/acquire-shop/new?shop={{ doc.name }}&area={{ doc.area }}&price={{ doc.price }}&airport={{ doc.airport }}" 
+                class="btn btn-primary">Apply to Aquire Shop
+            </a>
+        </div>
+    </div>
+    
+{% endblock %}

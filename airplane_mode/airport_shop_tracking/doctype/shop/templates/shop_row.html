@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shop Cards</title>
+	<style>
+		.result{
+			display: flex;
+			/* flex-direction: row;
+			justify-content: center; */
+			gap: 1rem;
+		}
+		.card {
+			width: 18rem;
+			border: 1px solid #ccc;
+			border-radius: 0.5rem;
+			overflow: hidden;
+		}
+
+		.card img {
+			width: 100%;
+			height: auto;
+		}
+
+		.card-body {
+			padding: 1rem;
+		}
+
+		.card-title {
+			font-size: 1rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.card-text {
+			margin-bottom: 1rem;
+		}
+
+		.cardlink {
+			color: blue;
+			text-decoration: none;
+			text-decoration-line: none;
+			/* float: right; */
+			margin-left: 1rem;
+		}
+
+		.green-dot {
+			padding: 8px;
+			color: #fff;
+			width: 20px;
+			height: 20px;
+			background: #018801;
+			border-radius: 10%;
+		}
+	</style>
+</head>
+
+<body>
+	{% if doc.status == 'Available' %}
+		<div class="card">
+			<img src="{{ doc.shop_image }}" class="card-img-top" alt="{{ doc.name }}">
+			<div class="card-body">
+				<h5 class="card-title">{{ doc.name }}</h5>
+				<p class="card-text">{{ doc.airport }}</p>
+				<span style="color: #fff;font-size: 0.7rem;" class="green-dot">{{ doc.status }}</span>
+				<a href="{{ doc.route }}" class="cardlink">View Shop</a>
+			</div>
+			
+		</div>
+	{% endif %}
+</body>
+
+</html>
+
